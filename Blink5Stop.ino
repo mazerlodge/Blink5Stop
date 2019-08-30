@@ -12,25 +12,32 @@ boolean bDone;
 void setup() {                
   // initialize the digital pin as an output.
   // Pin 13 has an LED connected on most Arduino boards:
-  pinMode(13, OUTPUT);     
+  // Pin 0 on Feather board.
+  pinMode(0, OUTPUT);     
 
   // Start with blinking enabled.
   bDone = false;
-  
+
+  // Enable debug printing
+  Serial.begin(115200);
+
+  Serial.println("Setup complete.");
 }
 
 void loop() {
 
-  if (!bDone)
-    for (int x=0; x<5; x++) {
-      digitalWrite(13, HIGH);   // set the LED on
+  if (!bDone) {
+    for (int x=0; x<7; x++) {
+      digitalWrite(0, LOW);   // set the LED on
       delay(500);              // wait for a second
-      digitalWrite(13, LOW);    // set the LED off
+      digitalWrite(0, HIGH);    // set the LED off
       delay(500);              // wait for a second
 
-      // stop blinking
-      bDone = true;
-      
     } // for x
-  
+
+    // stop blinking
+    bDone = true;
+      
+  } // if !bDone
+    
 }
