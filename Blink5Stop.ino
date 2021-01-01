@@ -25,7 +25,7 @@ void setup() {
 void loop() {
 
   if (!bDone) {
-    for (int x=0; x<7; x++) {
+    for (int x=0; x<5; x++) {
       digitalWrite(LED_PIN, HIGH);   // set the LED on
       delay(500);              // wait for a second
       digitalWrite(LED_PIN, LOW);    // set the LED off
